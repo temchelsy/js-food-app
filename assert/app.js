@@ -1,4 +1,4 @@
-const mealList = document.getElementById('mealList')
+const mealList = document.getElementById('list')
 const searchInput = document.getElementById('search-input')
 let allMeals = []
 
@@ -16,7 +16,7 @@ async function getMeals () {
 }
 
 function displayMeals (meals) {
-  mealList.innerHTML = ''
+  list.innerHTML = ''
 
   meals.forEach((meal) => {
     const mealItem = document.createElement('div')
