@@ -1,0 +1,83 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+#mealList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.meal-item {
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+}
+
+.meal-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.meal-item {
+    position: relative;
+    width: 200px;
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.meal-image img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+    
+}
+
+.meal-info {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(255,255,255,0.9);
+    padding: 10px;
+    box-sizing: border-box;
+    transition: top 0.5s ease;
+    background: linear-gradient(
+        to bottom,
+        rgb(204, 255, 51, 0.7),
+        rgb(204, 255, 51, 0.9)
+      );
+      transition: 0.2s All;
+      
+}
+
+.meal-item:hover .meal-image img {
+    transform: scale(1.1);
+}
+
+.meal-item:hover .meal-info {
+    top: 0;
+}
