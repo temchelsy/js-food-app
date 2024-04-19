@@ -43,18 +43,13 @@ h1 {
   margin: 10px;
   overflow: hidden;
   border-radius: 5px;
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 }
 
 .meal-image img {
   width: 300px;
   height: 400px;
   margin: 1.5rem;
-  background: linear-gradient(
-    to left,
-    rgba(204, 255, 51, 0.5),
-    rgba(255, 255, 255, 0.9)
-);
+  background: lightgreen;
   border-radius: 8px;
   box-sizing: border-box;
   overflow: auto;
@@ -70,12 +65,7 @@ h1 {
   background-color: white;
   padding: 10px;
   box-sizing: border-box;
-  /* transition: top 0.5s ease; */
-  background: linear-gradient(
-    to bottom,
-    rgb(204, 255, 51, 0.7),
-    rgba(175, 218, 47, 0.9)
-  );
+  background: lightgreen;
   transition: 0.2s all;
 }
 
