@@ -63,9 +63,9 @@ h1 {
   left: 0;
   right: 0;
   background-color: white;
+  background: lightgreen;
   padding: 10px;
   box-sizing: border-box;
-  background: lightgreen;
   transition: 0.2s all;
 }
 
