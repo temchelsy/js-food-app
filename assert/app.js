@@ -1,26 +1,26 @@
-const mealList = document.getElementById('list')
-const searchInput = document.getElementById('search-input')
+const list = document.getElementById('list')
+const search = document.getElementById('search')
 let allMeals = []
 
-async function getMeals () {
+async function getMeals() {
   try {
     const response = await fetch(
-      'https://www.themealdb.com/api/json/v1/1/search.php?s='
+      "https://www.themealdb.com/api/json/v1/1/search.php?s="
     )
     const data = await response.json()
     allMeals = data.meals
     displayMeals(allMeals)
   } catch (error) {
-    console.error('Error fetching meals:', error)
+    console.error("Error fetching meals:", error)
   }
 }
 
-function displayMeals (meals) {
+function displayMeals(meals) {
   list.innerHTML = ''
 
   meals.forEach((meal) => {
     const mealItem = document.createElement('div')
-    mealItem.classList.add('meal-item')
+    mealItem.classList.add("meal-item")
     mealItem.innerHTML = `
             <div class="meal-image">
                 <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
@@ -32,12 +32,12 @@ function displayMeals (meals) {
                 <p>Instructions: ${meal.strInstructions}</p>
             </div>
         `
-    mealList.appendChild(mealItem)
+    list.appendChild(mealItem);
   })
 }
 
-searchInput.addEventListener('input', () => {
-  const searchTerm = search-input.value.trim().toLowerCase()
+search.addEventListener('input', () => {
+  const searchTerm = search.value.trim().toLowerCase()
   const filteredMeals = allMeals.filter((meal) =>
     meal.strMeal.toLowerCase().includes(searchTerm)
   )
