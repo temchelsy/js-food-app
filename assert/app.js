@@ -2,7 +2,7 @@ const list = document.getElementById('list')
 const search = document.getElementById('search')
 let allMeals = []
 
-async function getMeals () {
+async function getMeals() {
   try {
     const response = await fetch(
       'https://www.themealdb.com/api/json/v1/1/search.php?s='
@@ -15,31 +15,32 @@ async function getMeals () {
   }
 }
 
-function displayMeals (meals) {
+function displayMeals(meals) {
   list.innerHTML = ''
-
   meals.forEach((meal) => {
     const mealItem = document.createElement('div')
     mealItem.classList.add('meal-item')
     mealItem.innerHTML = `
-            <div class="meal-image">
-                <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
-            </div>
-            <div class="meal-info">
-                <h2>${meal.strMeal}</h2>
-                <p>Category: ${meal.strCategory}</p>
-                <p>Area: ${meal.strArea}</p>
-                <p>Instructions: ${meal.strInstructions}</p>
-            </div>
-        `
+      <div class='meal-image'>
+        <img src='${meal.strMealThumb}' alt='${meal.strMeal}'>
+      </div>
+      <div class='meal-info'>
+        <h2>${meal.strMeal}</h2>
+        <p>Category: ${meal.strCategory}</p>
+        <p>Area: ${meal.strArea}</p>
+        <p>Instructions: ${meal.strInstructions}</p>
+      </div>
+    `
     list.appendChild(mealItem)
   })
 }
 
-search.addEventListener('input', () => {
+search.addEventListener("input", () => {
   const searchTerm = search.value.trim().toLowerCase()
-  const filteredMeals = allMeals.filter((meal) =>
-    meal.strMeal.toLowerCase().includes(searchTerm)
+  const filteredMeals = allMeals.filter(
+    (meal) =>
+      meal.strMeal.toLowerCase().includes(searchTerm) ||
+      meal.strCategory.toLowerCase().includes(searchTerm)
   )
   displayMeals(filteredMeals)
 })
