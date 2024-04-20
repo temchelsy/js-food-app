@@ -2,7 +2,7 @@ const list = document.getElementById('list')
 const search = document.getElementById('search')
 let allMeals = []
 
-async function getMeals() {
+async function getMeals () {
   try {
     const response = await fetch(
       'https://www.themealdb.com/api/json/v1/1/search.php?s='
@@ -15,7 +15,7 @@ async function getMeals() {
   }
 }
 
-function displayMeals(meals) {
+function displayMeals (meals) {
   list.innerHTML = ''
   meals.forEach((meal) => {
     const mealItem = document.createElement('div')
@@ -35,7 +35,7 @@ function displayMeals(meals) {
   })
 }
 
-search.addEventListener("input", () => {
+search.addEventListener('input', () => {
   const searchTerm = search.value.trim().toLowerCase()
   const filteredMeals = allMeals.filter(
     (meal) =>
